@@ -5,6 +5,7 @@
         <attr name="otp" format="string" />
         <attr name="hide_otp" format="boolean" />
         <attr name="hide_otp_drawable" format="reference" />
+        <attr name="hide_otp_error_drawable" format="reference" />
         <attr name="length" format="integer" />
         <attr name="width" format="dimension" />
         <attr name="height" format="dimension" />

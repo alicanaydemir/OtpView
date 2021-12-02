@@ -25,6 +25,7 @@ class ItemView : FrameLayout {
     private var boxBackgroundColorSuccess: Int = 0
     private var boxBackgroundColorError: Int = 0
     private var hideOTPDrawable: Int = 0
+    private var hideOTPErrorDrawable: Int = 0
     private var defaultOTPDrawable: Int = 0
     private var hideOTP = false
 
@@ -59,6 +60,7 @@ class ItemView : FrameLayout {
         var barMarginTop = styles.getDimension(R.styleable.OtpTextView_bar_margin_top, DEFAULT_BAR_MARGIN.toFloat())
         hideOTP = styles.getBoolean(R.styleable.OtpTextView_hide_otp, false)
         hideOTPDrawable = styles.getResourceId(R.styleable.OtpTextView_hide_otp_drawable, R.drawable.bg_pin)
+        hideOTPErrorDrawable = styles.getResourceId(R.styleable.OtpTextView_hide_otp_error_drawable, R.drawable.bg_pin)
 
         defaultOTPDrawable = ResourcesCompat.getColor(context.resources, R.color.transparent, null)
 
@@ -142,6 +144,8 @@ class ItemView : FrameLayout {
             ERROR -> {
                 view?.setBackgroundColor(barErrorColor)
                 this.setBackgroundResource(boxBackgroundColorError)
+                textView?.setBackgroundResource(hideOTPDrawable)
+
             }
             SUCCESS -> {
                 view?.setBackgroundColor(barSuccessColor)
