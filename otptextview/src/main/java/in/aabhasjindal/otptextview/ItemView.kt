@@ -144,12 +144,13 @@ class ItemView : FrameLayout {
             ERROR -> {
                 view?.setBackgroundColor(barErrorColor)
                 this.setBackgroundResource(boxBackgroundColorError)
-                textView?.setBackgroundResource(hideOTPDrawable)
+                textView?.setBackgroundResource(hideOTPErrorDrawable)
 
             }
             SUCCESS -> {
                 view?.setBackgroundColor(barSuccessColor)
                 this.setBackgroundResource(boxBackgroundColorSuccess)
+
             }
             else -> {
             }
