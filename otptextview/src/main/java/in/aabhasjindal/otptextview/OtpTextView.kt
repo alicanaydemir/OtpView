@@ -23,7 +23,8 @@ class OtpTextView : FrameLayout {
     private var length: Int = 0
 
     private val filter: InputFilter
-        get() = InputFilter { source, start, end, _, _, _ ->
+        get() = InputFilter { source, start, end, _, count, _ ->
+            if(count==length){otpListener?.onReachLimit()}
             for (i in start until end) {
                 if (!Pattern.compile(
                                 PATTERN)

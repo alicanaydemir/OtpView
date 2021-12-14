@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             override fun onOTPComplete(otp: String) {
                 Toasty.success(this@MainActivity, "The OTP is $otp", Toast.LENGTH_SHORT).show()
             }
+
+            override fun onReachLimit() {
+
+            }
         }
         errorButton.setOnClickListener { otpTextView?.showError() }
         successButton.setOnClickListener { otpTextView?.showSuccess() }
