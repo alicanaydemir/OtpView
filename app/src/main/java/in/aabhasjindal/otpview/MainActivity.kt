@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 Toasty.success(this@MainActivity, "The OTP is $otp", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onReachLimit() {
+            override fun onReachLimit(source: CharSequence) {
 
             }
         }
